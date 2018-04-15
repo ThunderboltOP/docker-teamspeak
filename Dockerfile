@@ -22,6 +22,7 @@ RUN echo "## Installing base ##" && \
     apk add --force \
         tini@community \
         ca-certificates \
+        ssh \
     \
     && echo "## Downloading ${TS_VERSION} ##" \
     && apk add --no-cache bzip2 tar \
@@ -72,7 +73,7 @@ RUN echo "## Installing base ##" && \
         "$ALPINE_GLIBC_BIN_PACKAGE_FILENAME" \
         "$ALPINE_GLIBC_I18N_PACKAGE_FILENAME"
 
-EXPOSE 9987/udp 10011/tcp 30033/tcp
+EXPOSE 9987/udp 10011/tcp 30033/tcp 22/tcp
 
 VOLUME /teamspeak/config /teamspeak/files /teamspeak/logs /teamspeak/data
 

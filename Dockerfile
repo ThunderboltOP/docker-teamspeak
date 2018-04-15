@@ -22,7 +22,7 @@ RUN echo "## Installing base ##" && \
     apk add --force \
         tini@community \
         ca-certificates \
-        ssh \
+        openssh-client \
     \
     && echo "## Downloading ${TS_VERSION} ##" \
     && apk add --no-cache bzip2 tar \
